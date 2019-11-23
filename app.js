@@ -1,8 +1,6 @@
 // jshint esversion: 8
-if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
-}
-
+  
 const express = require("express");
 const bodyParser = require("body-parser");
 const bcrypt = require("bcryptjs");
@@ -128,6 +126,8 @@ function checkNotAuthenticated(req, res, next) {
   next();
 }
 
-app.listen(3000, (req, res) => {
-  console.log("Server-port: 3000");
-});
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port);

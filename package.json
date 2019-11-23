@@ -1,26 +1,35 @@
 {
-  "name": "sportz",
+  "name": "sports-online",
   "version": "1.0.0",
-  "description": "",
+  "description": "---\r # Introduction\r ### All sports update 24 hours every moment.  Live broadcasting available here for all big leagues and tournament like EPL, LA LIGA, SERIE A, BUNDESLIGA, NBA, FIFA WORLD CUP, OLYMPIC GAMES, EURO, TENNIS, CRICKET, FORMULA 1 etc. Weather forecasting also available.\r ---\r # Technology Uses",
   "main": "app.js",
-  "dependencies": {
-      "body-parser": "^1.19.0",
-      "bcryptjs": "^2.4.3",
-      "dotenv": "^8.2.0",
-      "ejs": "^2.7.2",
-      "express": "^4.17.1",
-      "express-flash": "0.0.2",
-      "express-session": "^1.17.0",
-      "method": "^2.0.0",
-      "method-override": "^3.0.0",
-      "override": "0.0.1",
-      "passport": "^0.4.0",
-      "passport-local": "^1.0.0"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
-  "author": "mostafiz",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RAHMANMDMOSTAFIZUR/sports-online.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "engines":{
+    "node":"12.13.1"
+  },
+  "bugs": {
+    "url": "https://github.com/RAHMANMDMOSTAFIZUR/sports-online/issues"
+  },
+  "homepage": "https://github.com/RAHMANMDMOSTAFIZUR/sports-online#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^2.7.4",
+    "express": "^4.17.1",
+    "express-flash": "0.0.2",
+    "express-session": "^1.17.0",
+    "method-override": "^3.0.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
+  }
 }

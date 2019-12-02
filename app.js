@@ -1,37 +1,65 @@
 // jshint esversion: 8
-  require("dotenv").config();
+require("dotenv").config();
   
 const express = require("express");
-const bodyParser = require("body-parser");
-const bcrypt = require("bcryptjs");
 const app = express();
 const passport = require("passport");
-const flash = require("express-flash");
+const flash = require("connect-flash");
 const session = require("express-session");
-const override = require("method-override");
-const users = [];
+const mongoose = require('mongoose');
 
-const initializePassport = require("./passport-config");
-initializePassport(
-  passport,
-  email => users.find(user => user.email === email),
-  id => users.find(user => user.id === id)
-);
+require('./config/passport')(passport);
 
-app.use(bodyParser.urlencoded({ extended: false }));
+// DB Config
+const db = require('./config/keys').mongoURI;
+
+// Connect to MongoDB
+mongoose
+  .connect(
+    db, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    }
+  )
+  .then(() => console.log('MongoDB Connected'))
+  .catch(err => console.log(err));
+
+// EJS
+app.set('view engine', 'ejs');
+
+// Express body parser
+app.use(express.urlencoded({
+  extended: true
+}));
 app.use(express.static("public"));
-app.set("view engine", "ejs");
-app.use(flash());
+// Express session
 app.use(
   session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
   })
 );
-app.use(override("_method"));
+
+// Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
+
+// Connect flash
+app.use(flash());
+
+// Global variables
+app.use(function (req, res, next) {
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  res.locals.error = req.flash('error');
+  next();
+});
+
+// Routes
+app.use('/', require('./routes/index.js'));
+app.use('/users', require('./routes/users.js'));
+
 
 app.get("/",  (req, res) => {
    res.render("index");
@@ -67,67 +95,12 @@ app.get("/team", (req, res) => {
   res.render("team");
 });
 
-
-app.get("/register", checkNotAuthenticated, (req, res) => {
-  res.render("register");
-});
-
-app.get("/login", checkNotAuthenticated, (req, res) => {
-  res.render("login");
-});
-
-app.get("/user", checkAuthenticated, (req, res) => {
-  res.render("user", { users: users });
-});
-
-app.post(
-  "/login",
-  checkNotAuthenticated,
-  passport.authenticate("local", {
-    successRedirect: "/user",
-    failureRedirect: "/login",
-    failureFlash: true
-  })
-);
-
-app.post("/register", checkNotAuthenticated, async (req, res) => {
-  try {
-    const hashPass = await bcrypt.hash(req.body.password, 10);
-    users.push({
-      id: Date.now().toString(),
-      name: req.body.name,
-      email: req.body.email,
-      password: hashPass
-    });
-    res.redirect("/login");
-  } catch (error) {
-    res.redirect("/register");
-  }
-});
-
-app.delete("/logout", (req, res) => {
-  req.logOut();
-  res.redirect("/login");
-});
-
-function checkAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-    return next();
-  }
-
-  res.redirect("/login");
-}
-
-function checkNotAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-    return res.redirect("/user");
-  }
-
-  next();
-}
-
 let port = process.env.PORT;
 if (port == null || port == "") {
-  port = 8000;
+  port = 4000;
 }
-app.listen(port);
+app.listen(4000, function(){
+  console.log("server srarted on port 4000");
+});
+
+

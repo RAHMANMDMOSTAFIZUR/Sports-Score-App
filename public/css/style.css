@@ -2,7 +2,7 @@
 body {
   line-height: 1.7;
   color: #4d4d4d;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 1.1rem;
 }
 
@@ -1182,3 +1182,202 @@ a:hover {
 .form-row{
   background-color: brown;
 }
+
+
+
+
+/*standings css */
+*{
+	font-family: Fjalla One;
+  margin: 0;
+	border: 0;
+	padding: 0;
+	color: rgb(110, 74, 74);
+}
+
+html{
+  background-color: #837575;
+}
+
+.ptable table{
+	margin: 30px auto;
+	border-collapse: collapse;
+}
+
+.ptable{
+	margin: 0px 0% 30px 0%;
+}
+
+th, td {
+    padding: 10px;
+}
+
+th{
+	background-color: black;
+	color: #ffe221;
+}
+
+.headin{
+	text-align: center;
+	text-decoration: none;
+	color: #ffe221;
+	margin: 30px;
+	display: block;
+}
+
+.wpos{
+	text-align: center;
+}
+
+.wpos td{
+	color: #77ff21;
+}
+
+.pos{
+	text-align: center;
+}
+
+.pos td{
+	color: #ff7b21;
+}
+
+table .col{
+	border-bottom: 1px solid #FFFFFF;
+}
+
+.wpos:hover{
+	background-color: #77ff21;
+}
+
+.wpos:hover td{
+	color: #000000;
+}
+
+.pos:hover{
+	background-color: #ff7b21;
+}
+
+.pos:hover td{
+	color: #000000;
+}
+
+/*standings css  */
+
+
+
+
+/* new point table */
+
+.main1 {
+  width: 80vw;
+  height: 90vh;
+  margin: auto;
+  position: relative;
+  top: 4vh;
+  font-family: 'Oswald', sans-serif
+}
+
+.main2 {
+  width: 80vw;
+  height: 90vh;
+  margin: auto;
+  background-color: #9e9e9e;
+  color: white;
+  padding: 0.5vw
+}
+
+.flag {
+  width: 5vw;
+  height: 3vw;
+  position: relative;
+  bottom: 0.5vw
+}
+
+.pt {
+  font-size: 2vw
+}
+
+table {
+  color: white
+}
+
+.logo {
+  width: 2vw;
+  height: 2vw
+}
+
+td {
+  text-align: center
+}
+
+.name {
+  text-align: left
+}
+
+thead {
+  background-color: red;
+  border-bottom: 2px solid red
+}
+
+.top {
+  background-color: rgb(0, 255, 0, 0.5)
+}
+
+.top .logo {
+  animation-name: four;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite
+}
+
+@keyframes four {
+  0% {
+      position: relative;
+      right: 0vw
+  }
+
+  50% {
+      position: relative;
+      right: 2vw
+  }
+
+  100% {
+      position: relative;
+      right: 0vw
+  }
+}
+
+@media only screen and (max-width: 425px) {
+
+  .main1,
+  .main2 {
+      width: 100vw;
+      height: 220vw
+  }
+
+  .name {
+      font-size: 4vw
+  }
+
+  .logo {
+      height: 6vw;
+      width: 6vw
+  }
+
+  h2 {
+      font-size: 8vw
+  }
+
+  .flag {
+      width: 10vw;
+      height: 6vw;
+      position: relative;
+      bottom: 1vw
+  }
+
+  .pt {
+      font-size: 5vw
+  }
+}
+
+/* new point table */

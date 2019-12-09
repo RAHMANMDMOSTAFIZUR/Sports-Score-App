@@ -1,11 +1,15 @@
 <%-include("header")-%>
-<a href="/users/logout" class="btn btn-secondary" style="position: absolute;
-    top: 28%;">Logout</a>
-<form action="/delete" method="post">
-    <input type="text" class="form-control" name="id" value="<%= user._id %>" hidden>
-<button type="submit" class="btn btn-secondary" style="position: relative;"> Delete Account </button>
-<h1 style="text-align: center;"> Hi <%= user.name %> </h1>
-</form>
+<div >
+    <form action="/delete" method="post">
+        <a href="/users/logout" class="btn btn-secondary" style="position: absolute;
+    top: 20%;">Logout</a>
+    <a href="/setting" class="btn btn-secondary" style="position: absolute;
+    top: 25%;"> Setting </a>
+        <input type="text" class="form-control" name="id" value="<%= user._id %>" hidden>
+        <button type="submit" class="btn btn-secondary" style="position: relative;"> Delete Account </button>
+        <h1 style="text-align: center;"> Hi <%= user.name %> </h1>
+    </form>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>

@@ -1,0 +1,22 @@
+<%-include("header")-%>
+<div style="margin: 3% 24%;">
+    <h1>User Details</h1>
+    <h1 style="text-align: left;">Current Name: <%= user.name%></h1>
+    <h1 style="text-align: left;">Current Email: <%= user.email%></h1>
+</div>
+<form action="/edit" method="post" style="margin: 0% 44% 0% 24%;">
+    <input type="text" name="name" id="name" class="form-control" required placeholder="Edit Your Name">
+    <input type="email" name="email" id="email" class="form-control" required placeholder="Edit Your Email">
+    <input type="text" name="id" id="id" value="<%= user._id%>" hidden>
+    <button type="submit" class="btn btn-primary btn-lg"> Save </button>
+    <a href="/dashboard" class="btn btn-secondary btn-lg"> Back to user account </a>
+    <a href="/setting" class="btn btn-secondary btn-lg"> Setting </a>
+</form>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

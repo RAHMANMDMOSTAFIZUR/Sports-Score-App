@@ -7,6 +7,7 @@ const passport = require('passport');
 router.use(express.static("public"));
 // Load User model
 const User = require('../models/User');
+const Blog = require('../models/Blogposts');
 const { forwardAuthenticated } = require('../config/auth');
 
 // Login Page
@@ -77,6 +78,39 @@ router.post('/register', (req, res) => {
       }
     });
   }
+});
+
+//post
+router.get("/adminpost", (req,res)=>{
+  res.render("adminpost", {blog: req.blog});
+});
+
+router.post("/adminpost", (req, res)=>{
+  const {blogTitle, blog} = req.body;
+  let errors = [];
+
+  if (!blogTitle || !blog) {
+    errors.push({ msg: 'Please enter all fields' });
+  }
+
+  if (errors.length > 0){
+    res.render("adminpost", {blogTitle, blog});
+    console.log(req.body);
+  }
+    Blog.findOne({blogTitle:blogTitle, blog:blog}).then(blogs =>{
+      if(blogs){
+        errors.push({ msg: 'This blog name already exits ! Try another name' });
+        req.flash('success_msg', 'This blog name and details is already exists');
+        console.log("This blog name already exits ! Try another name");
+        res.render("adminpost", {blogTitle, blog});
+      }else{
+        const newBlog = new Blog({blogTitle, blog})
+        newBlog.save().then(blogs =>{
+          req.flash("success_msg", "Your blog has successfully been posted");
+          res.redirect("/posts");
+        }).catch(err => console.log(err));
+      }
+    })
 });
 
 // Login

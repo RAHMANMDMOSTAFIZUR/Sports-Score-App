@@ -6,7 +6,7 @@ body {
 form {
     position: absolute;
     left: 35%;
-    top: 35%;
+    top: 70%;
     transform: translate(-50, -50);
     box-sizing: border-box;
     box-shadow: 10px 10px 10px solid #383232;
@@ -15,7 +15,7 @@ form {
 }
 
 .name {
-    padding: 7% 20%;
+    padding: 28% 20%;
     text-align: center;
 }
 

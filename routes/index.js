@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
 const User = require('../models/User');
+const Blog = require('../models/Blogposts');
 router.use(express.static("public"));
 // Welcome Page
 router.get('/', forwardAuthenticated, (req, res) => res.render('index'));
@@ -13,6 +14,15 @@ router.get('/dashboard', ensureAuthenticated, (req, res) =>
     user: req.user
   })
 );
+
+//blogPost
+router.get("/posts", (req,res)=>{
+  Blog.find({}, function(err, blogs){
+    res.render("posts", {blog: blogs, user:req.user})
+    console.log(blogs);
+  });
+});
+
 //setting
 router.get("/setting", (req,res)=>res.render("setting", {user:req.user}));
 //edit

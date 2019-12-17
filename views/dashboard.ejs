@@ -2,12 +2,14 @@
 <div >
     <form action="/delete" method="post">
         <a href="/users/logout" class="btn btn-secondary" style="position: absolute;
-    top: 20%;">Logout</a>
+    top: 40%;"> Want To Logout Now?</a>
     <a href="/setting" class="btn btn-secondary" style="position: absolute;
-    top: 25%;"> Setting </a>
+    top: 50%;"> Update Your Acoount </a>
+    <a href="/users/adminpost" class="btn btn-secondary" style="position: absolute;
+    top: 70%;"> Post Your blog </a>
         <input type="text" class="form-control" name="id" value="<%= user._id %>" hidden>
-        <button type="submit" class="btn btn-secondary" style="position: relative;"> Delete Account </button>
-        <h1 style="text-align: center;"> Hi <%= user.name %> </h1>
+        <button type="submit" class="btn btn-secondary" style="position: absolute; top:60%;"> Delete Your Account </button>
+        <h1 style="text-align: center;"> Hi Mr. <%= user.name %>. You are logged in now..</h1>
     </form>
 </div>
 

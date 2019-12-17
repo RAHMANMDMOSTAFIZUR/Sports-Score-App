@@ -1,27 +1,27 @@
 <%-include("header")-%>
     <form action="/users/register" method="post" style="padding: 7% 40%;">
         <%-include("./partials/messages")-%>
-        <h1 style="color:black;" style="font-weight: 400;font-size: 20px;"<h1>Register Here</h1>
+        <h1 style="color:black;" style="font-weight: 200;font-size: 20px;"<h1>Free Register Here</h1>
         <div class="form-row">
-            <input type="name" id="name" name="name" class="form-control" placeholder="Enter Name"
+            <input type="name" id="name" name="name" class="form-control" placeholder="Enter your Name"
                 value="<%= typeof name != 'undefined' ? name : '' %>" />
         </div>
         <div class="form-row">
-            <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email"
+            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your Email"
                 value="<%= typeof email != 'undefined' ? email : '' %>" />
         </div>
         <div class="form-row">
-            <input type="password" id="password" name="password" class="form-control" placeholder="Create Password"
+            <input type="password" id="password" name="password" class="form-control" placeholder="Create your Password"
                 value="<%= typeof password != 'undefined' ? password : '' %>" />
         </div>
         <div class="form-row">
-            <input type="password" id="password2" name="password2" class="form-control" placeholder="Confirm Password"
+            <input type="password" id="password2" name="password2" class="form-control" placeholder="Confirm your Password"
                 value="<%= typeof password2 != 'undefined' ? password2 : '' %>" />
         </div>
         <div class="form-row">
-            <button type="submit" class="btn btn-primary"> Register </button>
+            <button type="submit" class="btn btn-primary"> Register now </button>
             <a href="/users/login" class="btn btn-primary" style="position: relative;
-    left: 33%;"> Login </a>
+    left: 59%;"> Login </a>
         </div>
 
     </form>

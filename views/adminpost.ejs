@@ -1,0 +1,23 @@
+<%-include("header")-%>
+        <%-include("./partials/messages")-%>
+        <form action="/users/adminpost" method="post" style="margin: 8% 15%;">
+            <h1>Post Your blogs</h1>
+                <div class="form-row">
+                <input type="text" id="blogTitle" name="blogTitle" class="form-control" placeholder="Blog Title Here" value="<%= typeof blogTitle != 'undefined' ? blogTitle : '' %>" />
+                </div>
+                <div class="form-row">
+                <textarea name="blog" id="blog" cols="35" class="form-control" rows="10" placeholder="Type Your Blog Here" value="<%= typeof blog != 'undefined' ? blog : '' %>"></textarea>
+                </div>
+                <div class="form-row">
+                <button type="submit" class="btn btn-outline-primary"
+                    style="padding-left: 59px;padding-right: 59px;"> Post </button>
+                    <a href="/users/user" class="btn btn-outline-primary" >Go To Your Account</a>
+                </div>
+        </form>
+</div>      
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

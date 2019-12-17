@@ -65,10 +65,10 @@ I followed these basic steps to create a site plan:
 Visualize what I need to do at every stage of the site creation process. Then break that down into tasks that need to be accomplished. Note whether a task is dependent on the completion of an earlier one. This list helps me estimate how long the project will take and the resources needed.
 5.	Set a timeline.
 Using task list from the previous step, I estimate the time it will take to accomplish each task. I always Keep in mind that the creative process is rarely problem-free; I need to allow a reasonable amount of time for unforeseen problems, such as having my site-rendering technology take longer than I think. Setting a timeline helps me guide the process and enables you to change plans if needed.      
-**week 12: I will complete   Backend**         
+**week 12: I will complete Backend**         
 **week 13: I will finish homepage**     
 **week 14: Upgrade homepage's frontend and backend**       
-**week 15: Design backend for whole project and **      
+**week 15: Design backend for whole project**      
 **week 16: Submit project**     
 
 

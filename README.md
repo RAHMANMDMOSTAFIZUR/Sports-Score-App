@@ -3,7 +3,7 @@
 
 ---
 # Introduction
-### All sports update 24 hours every moment.  Live broadcasting available here for all big leagues and tournament like EPL, LA LIGA, SERIE A, BUNDESLIGA, NBA, FIFA WORLD CUP, OLYMPIC GAMES, EURO, TENNIS, CRICKET, FORMULA 1 etc. Weather forecasting also available.
+### All sports update 24 hours every moment.  Live broadcasting available here for all big leagues and tournament like Epl, La Liga, Serie A, Bundesliga, NBA, Fifa world cup, Olympic games, Euro, Tennis, Cricket, Formula1, etc. Weather forecasting also available.
 ---
 # Technology Uses
 
@@ -68,8 +68,8 @@ Using task list from the previous step, I estimate the time it will take to acco
 **week 12: I will complete   Backend**         
 **week 13: I will finish homepage**     
 **week 14: Upgrade homepage's frontend and backend**       
-**week 15: Design backend for whole project and learn advance backend**      
-**week 16: Apply backend in front page and other few pages**     
+**week 15: Design backend for whole project and **      
+**week 16: Submit project**     
 
 
 ---
@@ -89,4 +89,4 @@ Here's a high-level list of the most important things I need to take into consid
 To have a smooth process when building my application, it’s essential to think ahead and choose options that best support me and the goals of the project.
 
 ## LIVE DEMO
-[Link](https://rahmanmdmostafizur.github.io/Sports-Score-App/)  
+[Link](https://rahmanmdmostafizur-sports-score-app-6.glitch.me//)  
